@@ -187,7 +187,32 @@ class LandingPage extends Component {
 				{/* Start of Task 4 - Reconstruct me please */}
 
 				{/* Code goes below me */}
+				<ImageContainer>
+	              <img src={user.avatar_url} className="br-100 pa1 ba b--black-10 h3 w3" alt="avatar" />
+                </ImageContainer>
 
+				<UserInfo>
+	               <span>{user.name}</span>
+	               <span className="f6 font-ubuntu-mono">&nbsp;@&nbsp;</span>
+	               <span className="f6 font-ubuntu-mono">{user.location}</span>
+	               {/* Something was here, determine based on the above image. */}
+                </UserInfo>
+
+				<Languages>
+	              {topLang.slice(0, number_of_languages_to_show).map((lang, ind) => (
+		          <Language key={ind} style={{color: `${langColors[lang[0]]}`}}>
+			      <Emoji src={emojis[ind]} />
+			       {lang[0]}
+		          </Language>
+	))}
+                 </Languages>
+
+				 <SocialMedia>
+	                <GitHub urlToUse={`https://github.com/${github_username}`} />
+	                {user.blog.includes("linkedin.com") && <LinkedIn urlToUse={user.blog} />}
+	                {user.blog.includes("twitter.com") && <Twitter urlToUse={user.blog} />}
+	                {user.blog.includes("hackerrank.com") && <HackerRank urlToUse={user.blog} />}
+                 </SocialMedia>
 				{/* End of Task 4 */}
 
 				<Projects updateLanguages={this.updateLanguages} updateTop3Languages={this.updateTop3Languages} langColors={langColors} />
