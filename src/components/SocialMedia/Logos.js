@@ -94,7 +94,7 @@ const Logo = ({ logoObj, onlyLogo=false }) => {
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox={view_box}>
 				{/* If requires only the logo, we don't include the square/circle background. A component is always true, so <Square /> gets returned below. */}
 				{/* Start of Task 5 */}
-				{!onlyLogo && <Square />}
+				{!onlyLogo && <circle />}
 				{/* End of Task 5 */}
 				{paths.map((path, ind) => (
 					<path key={ind} fill="#000" className="bg-black" d={path}></path>
