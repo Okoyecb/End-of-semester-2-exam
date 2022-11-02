@@ -69,7 +69,9 @@ class Projects extends Component {
 
 		/* Code goes below here */
 		// Fetches user's repositories.
-
+		fetch(`https://api.github.com/users/${github_username}/repos?${repo_endpoint_parameter}`)
+		.then(response => response.json())
+		.then(result => this.setState({ repos: result }));
 		/* End of a part of Task 2 */
 	}
 
