@@ -126,7 +126,26 @@ class LandingPage extends Component {
 		/* Start of Task 3 */
 
 		/* Code goes below here */
-		// Fetches language colors.
+		// F /* We specify an endpoint to fetch data from. */
+ fetch('http://example.com/movies.json')
+ /*
+ Once fetched, we then parse the response.
+
+ Response will be in the form of a string,
+ we convert the data to json via .json() method.
+ */
+ .then(function(response) {
+ 	return response.json();
+	 this.setState({ langColors: result });
+ })
+ /*
+ We can then do whatever we like with the json object.
+
+ The example below converts the json back to a string and outputs to the console.
+ */
+ .then(function(myJson) {
+ 	console.log(JSON.stringify(myJson));
+ });
 
 		/* End of Task 3 */
 	}
