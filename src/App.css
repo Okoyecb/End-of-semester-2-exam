@@ -9,7 +9,7 @@ font-family: 'Open Sans', sans-serif;
 
 .font-ubuntu-mono {
   font-family: 'Ubuntu Mono', monospace;
-	font-weight: normal;
+	font-weight:700;
 }
 .font-ubuntu-mono-bold {
   font-family: 'Ubuntu Mono', monospace;
@@ -30,7 +30,9 @@ font-family: 'Open Sans', sans-serif;
   font-weight: bold;
 }
 
-
+body {
+  background-color:burlywood;
+}
 
 
 html {

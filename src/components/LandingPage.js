@@ -136,7 +136,7 @@ class LandingPage extends Component {
  */
  .then(function(response) {
  	return response.json();
-	 this.setState({ langColors: result });
+
  })
  /*
  We can then do whatever we like with the json object.
