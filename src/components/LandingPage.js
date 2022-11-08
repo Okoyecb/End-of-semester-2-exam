@@ -1,4 +1,5 @@
 /* Start of import */
+import { Outlet } from "react-router-dom";
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { GitHub, LinkedIn, Twitter, HackerRank } from './SocialMedia/Logos';
@@ -127,7 +128,7 @@ class LandingPage extends Component {
 
 		/* Code goes below here */
 		// F /* We specify an endpoint to fetch data from. */
- fetch('http://example.com/movies.json')
+ fetch('https://raw.githubusercontent.com/Diastro/github-colors/master/github-colors.json')
  /*
  Once fetched, we then parse the response.
 
@@ -216,7 +217,7 @@ class LandingPage extends Component {
 				{/* End of Task 4 */}
 
 				<Projects updateLanguages={this.updateLanguages} updateTop3Languages={this.updateTop3Languages} langColors={langColors} />
-
+				<Outlet/>
 				{user.hireable && <Hire />}
 			</Container>
 		)

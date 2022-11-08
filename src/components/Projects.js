@@ -1,4 +1,5 @@
 /* Start of import */
+import {Link } from "react-router-dom";
 import React, { Component } from 'react';
 import RepoCard from './RepoCard';
 import styled from 'styled-components';
@@ -38,7 +39,7 @@ class WantedRepos extends Component {
 	filterRepositories = (repos) => {
 		const { number_of_repos_to_show } = content;
 		return repos.map((repo, ind) => (
-			(ind < number_of_repos_to_show || ind === -1) && <RepoCard key={ind} repo={repo} {...this.props} />
+			(ind < number_of_repos_to_show || ind === -1) && <Link to={`/repository/${repo.id}`}><RepoCard key={ind} repo={repo} {...this.props} /></Link>
 		))
 	}
 
@@ -51,7 +52,6 @@ class WantedRepos extends Component {
 		)
 	}
 }
-
 class Projects extends Component {
 	constructor(props) {
 		super(props);
@@ -76,6 +76,7 @@ class Projects extends Component {
 	}
 
 	render() {
+		console.log(this.state.repos)
 		const { repos } = this.state;
 		return (
 			repos == null
@@ -89,6 +90,7 @@ class Projects extends Component {
 					<Title>{content.title}</Title>
 					<WantedRepos repos={repos} {...this.props} />
 				</Scroller>
+
 			</Container>
 		)
 	}
